@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.artifactory'
+// apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 
 def packageName = 'info.androidhive'
@@ -60,22 +60,22 @@ publishing {
     }
 }
 
-artifactory {
-    contextUrl = 'http://localhost:8081/artifactory'
-    publish {
-        repository {
-            repoKey = 'androidhive-maven'
-            username = artifactory_username
-            password = artifactory_password
-        }
-        defaults {
-            publications('aar')
-            publishArtifacts = true
-            properties = ['qa.level': 'basic', 'dev.team': 'core']
-            publishPom = true
-        }
-    }
-}
+//artifactory {
+//    contextUrl = 'http://localhost:8081/artifactory'
+//    publish {
+//        repository {
+//            repoKey = 'androidhive-maven'
+//            username = artifactory_username
+//            password = artifactory_password
+//        }
+//        defaults {
+//            publications('aar')
+//            publishArtifacts = true
+//            properties = ['qa.level': 'basic', 'dev.team': 'core']
+//            publishPom = true
+//        }
+//    }
+//}
 
 android {
     compileSdkVersion 26
